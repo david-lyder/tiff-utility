@@ -44,7 +44,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>C:\konica\tiff\tifflib\tiff-4.0.10.tar\tiff-4.0.10\tiff-4.0.10\libtiff;$(IncludePath)</IncludePath>
+    <IncludePath>..\tiff-4.0.10\libtiff;$(IncludePath)</IncludePath>
     <TargetName>app</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -78,7 +78,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>C:\konica\tiff\tifflib\tiff-4.0.10.tar\tiff-4.0.10\tiff-4.0.10\libtiff\libtiff.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>..\tiff-4.0.10\libtiff\libtiff.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <Version>
       </Version>
     </Link>
