@@ -1,0 +1,1 @@
+win32 console app to manipulate TIFF images using tifflib 4.0.10
