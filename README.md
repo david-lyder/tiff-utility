@@ -1,6 +1,6 @@
 
 <h2>Usage</h2>
-app.exe <br>
+<b>app.exe</b> <br>
 Manipulate TIFF image files. Remove page by number, remove blank page, concatenate two TIFF files.<br>       
 Remove a blank page:  <br>
   app.exe  -remove-blank  [TIFF file name] [output TIFF file name]  <br>
