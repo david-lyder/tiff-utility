@@ -36,7 +36,7 @@ app.exe -cat ..\input\four_page.tif ..\input\four_page.tif eight_page.tif <br>
 The tifflib distibution, tiff-4.0.10, is inluded in this repo. <br>
 tifflib was built in release mode for Microsoft Visual Studio C++ using nmake: <br>
    nmake -f makefile.vc <br>
-from developer command prompt for VS2012 <br>
+from the developer command prompt for VS2012 <br>
 
 One change was required in tif_config.h. The following code was added: <br>
 #if defined(_MSC_VER) <br>
@@ -45,9 +45,9 @@ One change was required in tif_config.h. The following code was added: <br>
 app.exe includes a reference to the static library libtiff.lib <br>
 
 <h3> Implementation decisions</h3>
-Removing a page by number from a TIFF was relatively easy by cycling through the directories using TIFFReadDirectory, keeping track of the page count, and skipping TIFFReadScanline\TIFFWriteScanline for the requested page number. <br>
+Removing a page by number from a TIFF was relatively easy by cycling through the directories using TIFFReadDirectory, keeping track of the page count, and skipping TIFFReadScanline-TIFFWriteScanline for the requested page number. <br><br>
 
-Merging TIFF files was accomplished using a similar technique, cycling through all of the input files and using IFFReadScanline\TIFFWriteScanline for every directory and writing all results to a new file. <br>
+Merging TIFF files was accomplished using a similar technique, cycling through all of the input files and using IFFReadScanline-TIFFWriteScanline for every directory and writing all results to a new file. <br>
 
 Identifying a blank TIFF proved to be difficult (perhaps there is a secret?). This is the method used: <br>
 Cycle through the input TIFF and create a new TIFF file for each page <br>
@@ -55,10 +55,14 @@ Use the C code from the libtiff tools folder to create a "tiffcmp" function. Use
 If the blank image is found, return the page number and use the RemoveByPage function to remove the blank page. <br>
 
 <b> Notes </b>
-
+The TIFFStreamOpen function was useful in some cases, but in others errors were thrown regarding missing tags when the stream was used. <br>
 
 <h2> Tests </h2>
-The TIFFStreamOpen function was useful in some cases, but in others errors were thrown regarding missing tags when the stream was used. <br>
+The code includes tests for all functions: <br>
+	TestRemoveByPage <br>
+	TestRemoveBlankPage <br>
+	TestMergeTiffs <br>
+
 
 
 
