@@ -26,7 +26,7 @@ was used to create uncompressed TIFF images.
 To remove a blank page: <br>
 app.exe -remove-blank ..\input\multipage.tif blank_removed.tif <br>
 
-To remove a page by mumber: <br>
+To remove a page by number: <br>
 app.exe -remove-page  2 ..\input\multipage.tif page_2_removed.tif <br>
 
 To concatenate two files: <br>
